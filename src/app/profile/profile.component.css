@@ -1,0 +1,26 @@
+img{
+    height: 21rem;
+    border-radius: 10px 10px  0 0;
+    width: 16rem;
+    object-fit: cover;
+}
+.contentDiv{
+    padding: 1rem;
+    position: relative;
+}
+h3{
+    display: inline;
+}
+.rating{
+    position: absolute;
+    right: 0;
+}
+.container{
+    width: 16rem;
+    margin: 2rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+p{
+    text-align: left;
+}
