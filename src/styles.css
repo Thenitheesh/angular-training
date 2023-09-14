@@ -2,3 +2,5 @@
 body{
     background-color: #E2D1F9;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

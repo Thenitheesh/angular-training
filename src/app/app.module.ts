@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { BoxComponent } from './box/box.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AddmovieComponent } from './addmovie/addmovie.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
