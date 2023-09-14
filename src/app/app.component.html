@@ -1,7 +1,6 @@
 <div>
-  <app-profile src={{movies[0].src}} movieName="{{movies[0].movieName}}"  details={{movies[0].details}}></app-profile>
-  <app-profile src={{movies[1].src}} movieName="{{movies[1].movieName}}"  details={{movies[1].details}} ></app-profile>
-  <app-profile src={{movies[2].src}} movieName="{{movies[2].movieName}}"  details={{movies[2].details}} ></app-profile>
-  <app-profile src={{movies[3].src}} movieName="{{movies[3].movieName}}"  details={{movies[3].details}} ></app-profile>
+  <app-profile *ngFor="let movi of movies; let i=index" [movie]="movi" [index]="i" (deleteMovie)="removeclr($event)"></app-profile>
+  <!-- <app-profile *ngFor="let movi of movies; let i=index" [movie]="movi" [index]="i" [Movielist]="movies"></app-profile> -->
+  <!-- <app-counter></app-counter> -->
  </div>
 

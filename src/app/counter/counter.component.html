@@ -1,0 +1,11 @@
+
+<button (click)="increment()">LIKE👍{{like}}</button>
+
+<button (click)="decrement()">👎{{dislike}}</button>
+  <progress min="0" max="100" value="{{progress}}"></progress>
+  <h1 *ngIf="state">Your are awesome</h1>
+
+
+  <input type="text" [style.background]="clr" [(ngModel)]="clr" >
+  <button (click)="colorList.push(clr)">add color</button>
+  <app-box *ngFor="let color of colorList;let i=index" [index]="i" [clr]="color" (deleteMovie)="removeclr($event)"></app-box>
