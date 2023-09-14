@@ -8,6 +8,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FormsModule } from '@angular/forms';
 import { BoxComponent } from './box/box.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
+import { AddmovieComponent } from './addmovie/addmovie.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ColorBoxComponent } from './color-box/color-box.component';
     ProfileComponent,
     CounterComponent,
     BoxComponent,
-    ColorBoxComponent
+    ColorBoxComponent,
+    AddmovieComponent
   ],
   imports: [
     BrowserModule,
