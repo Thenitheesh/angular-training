@@ -1,0 +1,45 @@
+.example-card {
+    max-width: 20rem;
+  }
+  h3,.toggle{
+    display: inline;
+    margin: 0.4rem;
+  }
+  button{
+    font-size: 1.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0.5rem;
+  }
+  img{
+    max-height: 25rem;
+    object-fit: cover;
+    object-position: top;
+  }
+  .icon{
+    font-size: 1.5rem;
+  }
+  .content-head{
+    display: flex;
+    align-items: center;
+  }
+  
+  .content{
+    line-clamp: 2;
+    overflow: hidden;
+  }
+  p{
+    
+    /* white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2; */ 
+     display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+
+  }
+  

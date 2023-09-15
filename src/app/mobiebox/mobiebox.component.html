@@ -1,0 +1,61 @@
+<mat-card class="example-card" >
+    <img mat-card-image [src]="mv.poster" alt="Photo of a Shiba Inu" />
+    <mat-card-content>
+      <div class="content-head">
+          <h3>{{ mv.name }}</h3>
+          <button mat-icon-button class="toggle" (click)="movietoggle()"><mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            color="primary"
+          
+          >expand_less</mat-icon></button>
+          <button mat-icon-button class="" (click)="movieinfo()"><mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            color="primary"
+          
+          >info</mat-icon></button>
+      </div>
+      <div class="content">
+          <p>{{ mv.summary }}</p>
+      </div>
+      <mat-card-actions>
+        <button
+          mat-icon-button
+          (click)="increment()"
+          matBadge="{{ likes }}"
+          matBadgePosition="after"
+          matBadgeColor="primary"
+        >
+          👍
+        </button>
+        <button
+          mat-icon-button
+          (click)="decrement()"
+          matBadge="{{ dislikes }}"
+          matBadgePosition="after"
+          matBadgeColor="primary"
+        >
+          👎
+        </button>
+        <button mat-icon-button>
+          <mat-icon
+            class="icon"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            color="primary"
+            fontIcon="edit"
+          ></mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            color="warn"
+            fontIcon="delete"
+          ></mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+  

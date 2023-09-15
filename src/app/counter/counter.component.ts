@@ -26,7 +26,7 @@ get state(){
     return false
   }
 }
-clr="purple"
+clr="green"
 colorList=['red','pink','purple']
 removeclr(index:number){
   this.colorList.splice(index, 1);

@@ -1,7 +1,32 @@
-<label for="">Movie name</label>
-<!-- <input type="text" [(ngmodel)]="name">
-<input type="text" [(ngmodel)]="rating">
-<input type="text" [(ngmodel)]="poster">
-<input type="text" [(ngmodel)]="summary">
-<label for=""></label> -->
-<!-- <button (click)="addMovie()"></button> -->
+<section class="addMovie">
+    <mat-form-field class="example-full-width">
+        <mat-label>Movie name</mat-label>
+        <input matInput placeholder="Movie name"  [(ngModel)]="name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>rating</mat-label>
+        <input matInput placeholder="rating"  [(ngModel)]="rating">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>poster</mat-label>
+        <input matInput placeholder="poster"  [(ngModel)]="poster">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>summary</mat-label>
+        <input matInput placeholder="summary"  [(ngModel)]="summary">
+      </mat-form-field>
+    <!-- <input type="text"  > -->
+    <!-- <label for="">rating</label>
+    <input type="text" [(ngModel)]="rating">
+    <label for="">poster</label>
+    <input type="text" [(ngModel)]="poster">
+    <label for="">summary</label>
+    <input type="text" [(ngModel)]="summary"> -->
+    
+    <button (click)="addMovie()" mat-raised-button color="primary">Add movie</button>
+</section>
+
+<section>
+  
+    <app-profile *ngFor="let movi of moviesList; let i=index" [movie]="movi" [index]="i" (deleteMovie)="removeclr($event)"></app-profile>
+</section>

@@ -1,9 +1,11 @@
 import { Component ,EventEmitter,Input, Output} from '@angular/core';
 export interface Movie{
+  id:string;
   name:string;
   poster:string;
   rating:number;
   summary:string;
+  trailer:string;
 }
 @Component({
   selector: 'app-profile',
@@ -13,7 +15,7 @@ export interface Movie{
 export class ProfileComponent {
 
   
-  @Input() movie:Movie={poster:"",name:"",summary:"",rating:0}
+  @Input() movie:Movie={poster:"",name:"",summary:"",rating:0,id:"",trailer:""}
   @Input() index:number=0
   @Output() deleteMovie= new EventEmitter<number>();
 

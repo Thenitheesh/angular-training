@@ -1,21 +1,11 @@
-import { Component, Input } from '@angular/core';
-import { Movie } from '../profile/profile.component';
+import { Injectable } from '@angular/core';
+import { Movie } from './profile/profile.component';
 
-@Component({
-  selector: 'app-addmovie',
-  templateUrl: './addmovie.component.html',
-  styleUrls: ['./addmovie.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class AddmovieComponent {
-  @Input() movies:Movie[]=[]
-id=""
-trailer=""
-  name='';
-  poster=''
-  summary=''
-  rating=0
- 
-  moviesList:Movie[]=[
+export class MovieService {
+  moviesList:Array<Movie>=[
     {
       "id": "99",
       "name": "Vikram",
@@ -106,21 +96,8 @@ trailer=""
     }
   ]
   
-  
-  addMovie(){
-    const data:Movie={name:this.name,
-      id:this.id,
-      poster:this.poster,
-      summary:this.summary,
-      rating:this.rating,
-      trailer:this.trailer,}
-
-    this.moviesList.push(data)
+  constructor() { }
+  getmovie(){
+    return this.moviesList
   }
-  removeclr(index:number){
-    this.moviesList.splice(index, 1);
-  }
-  // addMovie(){
-  //   // movieList.push={name:}
-  // }
 }

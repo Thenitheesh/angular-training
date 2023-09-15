@@ -1,7 +1,15 @@
 <div>
   <!-- <app-addMovie [movie]="movies"></app-addMovie> -->
-  <app-profile *ngFor="let movi of movies; let i=index" [movie]="movi" [index]="i" (deleteMovie)="removeclr($event)"></app-profile>
+  <!-- <app-addmovie [movies]="moviesList"></app-addmovie> -->
   <!-- <app-profile *ngFor="let movi of movies; let i=index" [movie]="movi" [index]="i" [Movielist]="movies"></app-profile> -->
   <!-- <app-counter></app-counter> -->
- </div>
-
+  <nav>
+  <ul>
+    <li><a routerLink="/movies">Movies</a></li>
+    <li><a routerLink="/color">color</a></li>
+    <li><a routerLink="/">home</a></li>
+    <li><a routerLink="/materialUi">materialUi</a></li>
+  </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
