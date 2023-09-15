@@ -19,6 +19,7 @@ import { MaterialMovieuiComponent } from './material-movieui/material-movieui.co
 import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge';
 import { MobieboxComponent } from './mobiebox/mobiebox.component';
+import { MovietrailerComponent } from './movietrailer/movietrailer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MobieboxComponent } from './mobiebox/mobiebox.component';
     AddmovieComponent,
     WelcomeComponent,
     MaterialMovieuiComponent,
-    MobieboxComponent
+    MobieboxComponent,
+    MovietrailerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../profile/profile.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobiebox',
@@ -26,7 +26,7 @@ constructor(private route:Router){
 
 }
 movietoggle(){
-  
+
 }
 movieinfo(){
   this.route.navigate([`/movies/${this.mv.id}`])

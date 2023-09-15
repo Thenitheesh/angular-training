@@ -80,7 +80,7 @@ export class MovieService {
     },
     {
       "name": "PS2",
-      "poster": "https://m.media-amazon.com/images/M/MV5BYjFjMTQzY2EtZjQ5MC00NGUyLWJiYWMtZDI3MTQ1MGU4OGY2XkEyXkFqcGdeQXVyNDExMjcyMzA@._V1_.jpg",
+      "poster": "https://thesouthfirst.com/wp-content/uploads/2023/04/PS2-poster.jpg",
       "summary": "Ponniyin Selvan: I is an upcoming Indian Tamil-language epic period action film directed by Mani Ratnam, who co-wrote it with Elango Kumaravel and B. Jeyamohan",
       "rating": 8,
       "trailer": "https://www.youtube.com/embed/KsH2LA8pCjo",
