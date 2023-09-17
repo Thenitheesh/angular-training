@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 import { Movie } from '../profile/profile.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-mobiebox',
@@ -16,17 +17,31 @@ export class MobieboxComponent {
   summary:"",
   trailer:""
 }
-
+@Input() index=0
+@Output() deleteMovie= new EventEmitter<number>();
+// @Output() editMovie= new EventEmitter<number>();
 like=0
 dislike=0
 progress=0
 initial="hidden"
-
+dis=""
+show=false
 constructor(private route:Router){
 
 }
-movietoggle(){
 
+editItem(){
+  this.route.navigate([`/movies/editMovie/${this.mv.id}`])
+}
+
+  getIndex(){
+    // this.Movielist.splice(this.index,0)
+  this.deleteMovie.emit(this.index)
+}
+movietoggle(){
+this.show=!this.show;
+
+this.dis="block"
 }
 movieinfo(){
   this.route.navigate([`/movies/${this.mv.id}`])

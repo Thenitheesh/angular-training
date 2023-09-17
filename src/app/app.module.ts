@@ -20,6 +20,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge';
 import { MobieboxComponent } from './mobiebox/mobiebox.component';
 import { MovietrailerComponent } from './movietrailer/movietrailer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 
 @NgModule({
@@ -33,13 +35,14 @@ import { MovietrailerComponent } from './movietrailer/movietrailer.component';
     WelcomeComponent,
     MaterialMovieuiComponent,
     MobieboxComponent,
-    MovietrailerComponent
+    MovietrailerComponent,
+    EditMovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,MatIconModule,
+    BrowserAnimationsModule,MatIconModule,ReactiveFormsModule,
     MatButtonModule,FormsModule, MatFormFieldModule, MatInputModule,MatCardModule,MatDividerModule,MatBadgeModule
   ],
   providers: [],

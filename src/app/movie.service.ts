@@ -100,4 +100,7 @@ export class MovieService {
   getmovie(){
     return this.moviesList
   }
+  setmovie(newMovie:Movie){
+    this.moviesList.push(newMovie)
+  }
 }

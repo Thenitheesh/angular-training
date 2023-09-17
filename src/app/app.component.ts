@@ -7,7 +7,7 @@ import { Movie } from './profile/profile.component';
 })
 export class AppComponent {
   title = 'angular-trainng';
-  
+ 
  moviesList:Movie[]=[
   {
     "id": "99",

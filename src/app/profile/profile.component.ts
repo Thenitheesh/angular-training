@@ -1,9 +1,9 @@
 import { Component ,EventEmitter,Input, Output} from '@angular/core';
-export interface Movie{
+export type Movie= {
   id:string;
   name:string;
   poster:string;
-  rating:number;
+  rating:number | '';
   summary:string;
   trailer:string;
 }

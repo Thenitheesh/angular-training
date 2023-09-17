@@ -1,3 +1,3 @@
 <section>
-    <app-mobiebox *ngFor="let movie of movieList" [mv]="movie" ></app-mobiebox>
+    <app-mobiebox *ngFor="let movie of movieList;let i=index" [index]="i" [mv]="movie" (deleteMovie)="removeclr($event)"  ></app-mobiebox>
 </section>
