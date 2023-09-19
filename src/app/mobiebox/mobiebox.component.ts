@@ -18,15 +18,16 @@ export class MobieboxComponent {
   trailer:""
 }
 @Input() index=0
-@Output() deleteMovie= new EventEmitter<string>();
+// @Output() deleteMovie= new EventEmitter<string>();
 // @Output() editMovie= new EventEmitter<number>();
+@Output() removeMovie= new EventEmitter();
 like=0
 dislike=0
 progress=0
 initial="hidden"
 dis=""
 show=false
-constructor(private route:Router){
+constructor(private route:Router,private movieslist:MovieService){
 
 }
 
@@ -34,16 +35,23 @@ editItem(){
   this.route.navigate([`/movies/editMovie/${this.mv.id}`])
 }
 
-  getIndex(){
-    // this.Movielist.splice(this.index,0)
-  // this.deleteMovie.emit(this.index)
-  this.deleteMovie.emit(this.mv.id)
-}
+//   getIndex(){
+//     // this.Movielist.splice(this.index,0)
+//   // this.deleteMovie.emit(this.index)
+//   this.deleteMovie.emit(this.mv.id)
+// }
 movietoggle(){
 this.show=!this.show;
 
 this.dis="block"
 }
+del(){
+  this.movieslist.deletemoviefromapi(this.mv.id).subscribe(()=>{
+    this.removeMovie.emit();
+  }
+
+  )}
+
 movieinfo(){
   this.route.navigate([`/movies/${this.mv.id}`])
 }

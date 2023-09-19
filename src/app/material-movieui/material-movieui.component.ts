@@ -15,10 +15,14 @@ constructor(private moviesList:MovieService){
 // this.movieList=this.moviesList.getmovie()
 }
 ngOnInit(){
-  this.moviesList.getmoviefromapi().subscribe((mv)=>{
-this.movieList=mv
-  })
+  this.onloadmovie();
 }
+  onloadmovie() {
+    this.moviesList.getmoviefromapi().subscribe((mv) => {
+      this.movieList = mv;
+    });
+  }
+
 ngDestroy(){
 
 }
@@ -29,10 +33,8 @@ ngDestroy(){
 // deletemoviefromapi(id:string){
 //   this.moviesList.deletemoviefromapi(id).subscribe()
 // }
-removeclr(id:string){
-  this.moviesList.deletemoviefromapi(id).subscribe(()=> this.ngOnInit())
- 
-  // this.movieList.splice(index, 1);
+removeclr(index:number){
+  this.movieList.splice(index, 1);
 }
 
 
