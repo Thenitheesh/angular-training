@@ -14,7 +14,7 @@ export class EditMovieComponent {
    moviesList:Array<Movie>=[]
    perMovie:any
   itemid:string=''
-  editMovie:any
+
   // id=this.perMovie.name
   
   
@@ -26,14 +26,16 @@ export class EditMovieComponent {
     summary: '',
     trailer: "",
   });
+  index=0
     constructor(private movieService:MovieService,private fb:FormBuilder,private router:Router,private routedata:ActivatedRoute){
   this.moviesList=this.movieService.getmovie()
   const { id } = this.routedata.snapshot.params;
   this.itemid=id
-      this.perMovie=this.moviesList.find((e)=>e.id==this.itemid)
-      if(Number(this.itemid) >0){
-  this.setValue()}
-  
+      this.perMovie=this.moviesList.find((e,c)=>{
+        this.index=c;
+        return e.id==this.itemid;
+      })
+  this.setValue()  
     }
     setValue(){
       this.moviesForm.setValue({
@@ -46,14 +48,12 @@ export class EditMovieComponent {
       })
     }
     
-  // console.lo
     addMovie(){
   console.log(this.moviesForm.value)
       if(this.moviesForm.valid) {
         const newMovie = this.moviesForm.value;
-        console.log(newMovie);
-        this.movieService.setmovie(newMovie as Movie);
-        // programmatically change
+        console.log(this.index);
+        this.movieService.updateMovie(this.index,1,newMovie as Movie);
         this.router.navigate(['/movies']);
       }}
      

@@ -8,11 +8,16 @@ import { Movie } from '../profile/profile.component';
   styleUrls: ['./material-movieui.component.css']
 })
 export class MaterialMovieuiComponent {
-  movieList
+  movieList:Movie[]=[]
 
   
 constructor(private moviesList:MovieService){
-this.movieList=this.moviesList.getmovie()
+// this.movieList=this.moviesList.getmovie()
+}
+ngOnInit(){
+  this.moviesList.getmoviefromapi().subscribe((mv)=>{
+this.movieList=mv
+  })
 }
 // editmovieDetails(index:number){
 

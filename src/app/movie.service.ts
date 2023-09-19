@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './profile/profile.component';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -96,11 +97,24 @@ export class MovieService {
     }
   ]
   
-  constructor() { }
+  constructor(private http:HttpClient) { }
   getmovie(){
     return this.moviesList
   }
+  getmoviefromapi(){
+    return this.http.get<Movie[]>(
+      'https://64f6f4189d7754084952d867.mockapi.io/movies'
+    );
+  }
+  getmoviefromapibyid(id:string){
+    return this.http.get<Movie[]>(
+      `https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`
+    );
+  }
   setmovie(newMovie:Movie){
     this.moviesList.push(newMovie)
+  }
+  updateMovie( i:number, j:number,newMovie:Movie){
+    this.moviesList.splice(i,j,newMovie)
   }
 }

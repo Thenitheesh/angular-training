@@ -16,9 +16,9 @@ moviesForm = this.fb.group({
   id: '',
   name: ['', [Validators.required]],
   rating: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
-  poster: '',
-  summary: '',
-  trailer: "",
+  poster:  ['', [Validators.required,  ]],
+  summary:  ['', [Validators.required, Validators.min(20)]],
+  trailer: ['', [Validators.required, Validators.pattern('^http.*')]],
 });
   constructor(private movieService:MovieService,private fb:FormBuilder,private router:Router,private routedata:ActivatedRoute){
 this.moviesList=this.movieService.getmovie()

@@ -22,6 +22,7 @@ import { MobieboxComponent } from './mobiebox/mobiebox.component';
 import { MovietrailerComponent } from './movietrailer/movietrailer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,MatIconModule,ReactiveFormsModule,
+    BrowserAnimationsModule,MatIconModule,ReactiveFormsModule,HttpClientModule,
     MatButtonModule,FormsModule, MatFormFieldModule, MatInputModule,MatCardModule,MatDividerModule,MatBadgeModule
   ],
   providers: [],

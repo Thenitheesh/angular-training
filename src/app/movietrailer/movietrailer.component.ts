@@ -14,9 +14,16 @@ export class MovietrailerComponent {
 constructor(private routeurl:ActivatedRoute,private movielist:MovieService,private santizer:DomSanitizer){
 const {id}=this.routeurl.snapshot.params
 this.id = id;
-this.movie = movielist.getmovie().find((mv) => mv.id === this.id);
-this.movie.trailer = this.santizer.bypassSecurityTrustResourceUrl(
-  this.movie.trailer
-);
+// this.movie = movielist.getmovie().find((mv) => mv.id === this.id);
+// this.movie.trailer = this.santizer.bypassSecurityTrustResourceUrl(
+//   this.movie.trailer
+// );
+}
+ngOnInit(){
+  this.movielist.getmoviefromapibyid(this.id).subscribe((mv)=>{
+    this.movie=mv
+    this.movie.trailer = this.santizer.bypassSecurityTrustResourceUrl(
+      this.movie.trailer);
+  })
 }
 }
