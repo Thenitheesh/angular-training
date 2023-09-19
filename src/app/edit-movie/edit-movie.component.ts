@@ -37,6 +37,9 @@ export class EditMovieComponent {
       })
   this.setValue()  
     }
+    // ngOnInit(){
+    //   this.perMovie=this.movieService.updatemoviefromapi(this.itemid,)
+    // }
     setValue(){
       this.moviesForm.setValue({
         id: this.perMovie.id,
@@ -53,8 +56,11 @@ export class EditMovieComponent {
       if(this.moviesForm.valid) {
         const newMovie = this.moviesForm.value;
         console.log(this.index);
-        this.movieService.updateMovie(this.index,1,newMovie as Movie);
-        this.router.navigate(['/movies']);
+        // this.movieService.updateMovie(this.index,1,newMovie as Movie);
+        this.perMovie=this.movieService.updatemoviefromapi(this.itemid,newMovie as Movie).subscribe(()=>{
+
+          this.router.navigate(['/movies']);
+        })
       }}
      
   }

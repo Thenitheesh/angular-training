@@ -122,9 +122,9 @@ export class MovieService {
   updateMovie( i:number, j:number,newMovie:Movie){
     this.moviesList.splice(i,j,newMovie)
   }
-  // updatemoviefromapi(id:string,editmovie:Movie){
-  //   return this.http.put(`https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`,editmovie)
-  // }
+  updatemoviefromapi(id:string,editmovie:Movie){
+    return this.http.put(`https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`,editmovie)
+  }
   
   deletemoviefromapi(id:string){
    return this.http.delete(`https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`)
