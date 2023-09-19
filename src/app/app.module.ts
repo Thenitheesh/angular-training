@@ -23,6 +23,7 @@ import { MovietrailerComponent } from './movietrailer/movietrailer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,MatIconModule,ReactiveFormsModule,HttpClientModule,
+    BrowserAnimationsModule,MatIconModule,ReactiveFormsModule,HttpClientModule,MatToolbarModule,
     MatButtonModule,FormsModule, MatFormFieldModule, MatInputModule,MatCardModule,MatDividerModule,MatBadgeModule
   ],
   providers: [],

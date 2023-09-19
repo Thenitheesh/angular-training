@@ -1,0 +1,21 @@
+nav{
+    height: 3rem;
+    width: 100%;
+
+}
+mat-toolbar{
+background-color: 
+#9D76C1;
+}
+ul{
+    margin: 0;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
