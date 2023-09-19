@@ -9,7 +9,7 @@ import { Movie } from '../profile/profile.component';
 })
 export class MaterialMovieuiComponent {
   movieList:Movie[]=[]
-
+id:string=''
   
 constructor(private moviesList:MovieService){
 // this.movieList=this.moviesList.getmovie()
@@ -19,11 +19,20 @@ ngOnInit(){
 this.movieList=mv
   })
 }
+ngDestroy(){
+
+}
 // editmovieDetails(index:number){
 
 // }
-removeclr(index:number){
-  this.movieList.splice(index, 1);
+
+// deletemoviefromapi(id:string){
+//   this.moviesList.deletemoviefromapi(id).subscribe()
+// }
+removeclr(id:string){
+  this.moviesList.deletemoviefromapi(id).subscribe(()=> this.ngOnInit())
+ 
+  // this.movieList.splice(index, 1);
 }
 
 

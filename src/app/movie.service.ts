@@ -111,10 +111,19 @@ export class MovieService {
       `https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`
     );
   }
+  setmoviefromapi(newMovie:Movie){
+    return this.http.post(
+      `https://64f6f4189d7754084952d867.mockapi.io/movies/`,newMovie
+    );
+  }
   setmovie(newMovie:Movie){
     this.moviesList.push(newMovie)
   }
   updateMovie( i:number, j:number,newMovie:Movie){
     this.moviesList.splice(i,j,newMovie)
+  }
+  deletemoviefromapi(id:string){
+   return this.http.delete(`https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`)
+    
   }
 }

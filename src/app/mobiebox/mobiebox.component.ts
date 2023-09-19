@@ -18,7 +18,7 @@ export class MobieboxComponent {
   trailer:""
 }
 @Input() index=0
-@Output() deleteMovie= new EventEmitter<number>();
+@Output() deleteMovie= new EventEmitter<string>();
 // @Output() editMovie= new EventEmitter<number>();
 like=0
 dislike=0
@@ -36,7 +36,8 @@ editItem(){
 
   getIndex(){
     // this.Movielist.splice(this.index,0)
-  this.deleteMovie.emit(this.index)
+  // this.deleteMovie.emit(this.index)
+  this.deleteMovie.emit(this.mv.id)
 }
 movietoggle(){
 this.show=!this.show;

@@ -28,9 +28,12 @@ console.log(this.moviesForm.value)
     if(this.moviesForm.valid) {
       const newMovie = this.moviesForm.value;
       console.log(newMovie);
-      this.movieService.setmovie(newMovie as Movie);
+      // this.movieService.setmovie(newMovie as Movie);
+      this.movieService.setmoviefromapi(newMovie as Movie).subscribe(()=>{
+        this.router.navigate(['/movies']);
+      })
       // programmatically change
-      this.router.navigate(['/movies']);
+    
     }}
    
 }
