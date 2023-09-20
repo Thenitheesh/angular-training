@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:"",component:WelcomeComponent},
   {path:"movies/:id",component:MovietrailerComponent},
   {path:"movies",component:MaterialMovieuiComponent,pathMatch:'full'},
-  {path:"movies/editMovie/:id",component:EditMovieComponent,pathMatch:'full'}
+  {path:"movies/editMovie/:id",component:EditMovieComponent,pathMatch:'full'},
 ];
 
 @NgModule({
