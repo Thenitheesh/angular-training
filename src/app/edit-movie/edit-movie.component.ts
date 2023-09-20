@@ -21,7 +21,7 @@ export class EditMovieComponent {
   moviesForm = this.fb.group({
     id: '',
     name: ['', [Validators.required]],
-    rating: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
+    rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
     poster: '',
     summary: '',
     trailer: "",
@@ -31,25 +31,24 @@ export class EditMovieComponent {
   this.moviesList=this.movieService.getmovie()
   const { id } = this.routedata.snapshot.params;
   this.itemid=id
-      this.perMovie=this.moviesList.find((e,c)=>{
-        this.index=c;
-        return e.id==this.itemid;
-      })
-  this.setValue()  
+      // this.perMovie=this.moviesList
+  // this.setValue()  
     }
-    // ngOnInit(){
-    //   this.perMovie=this.movieService.updatemoviefromapi(this.itemid,)
+    ngOnInit(){
+      this.perMovie=this.movieService.getmoviefromapibyid(this.itemid).subscribe((movi)=>{
+        this.moviesForm.patchValue(movi)
+      })
+      }
+    // setValue(){
+    //   this.moviesForm.setValue({
+    //     id: this.perMovie.id,
+    //     name: this.perMovie.name,
+    //     rating: this.perMovie.rating,
+    //     poster: this.perMovie.poster,
+    //     summary: this.perMovie.summary,
+    //     trailer: this.perMovie.trailer,
+    //   })
     // }
-    setValue(){
-      this.moviesForm.setValue({
-        id: this.perMovie.id,
-        name: this.perMovie.name,
-        rating: this.perMovie.rating,
-        poster: this.perMovie.poster,
-        summary: this.perMovie.summary,
-        trailer: this.perMovie.trailer,
-      })
-    }
     
     addMovie(){
   console.log(this.moviesForm.value)

@@ -20,6 +20,7 @@ ngOnInit(){
   onloadmovie() {
     this.moviesList.getmoviefromapi().subscribe((mv) => {
       this.movieList = mv;
+      
     });
   }
 

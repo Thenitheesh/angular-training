@@ -15,7 +15,7 @@ export class AddmovieComponent {
   moviesForm = this.fb.group({
     id: '',
     name: ['', [Validators.required]],
-    rating: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
+    rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
     poster: ['', [Validators.required]],
     summary: ['', [Validators.required, Validators.min(20)]],
     trailer: ['', [Validators.required, Validators.pattern('^http.*')]],

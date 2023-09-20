@@ -2,13 +2,13 @@
 <!-- <app-addmovie [movies]="moviesList"></app-addmovie> -->
 <!-- <app-profile *ngFor="let movi of movies; let i=index" [movie]="movi" [index]="i" [Movielist]="movies"></app-profile> -->
 <!-- <app-counter></app-counter> -->
-<mat-toolbar>
+<mat-toolbar color="primary">
   <nav>
     <ul>
-      <li><a routerLink="/movies/add">Add Movie</a></li>
-      <li><a routerLink="/color">color</a></li>
-      <li><a routerLink="/">home</a></li>
-      <li><a routerLink="/movies">materialUi Movie</a></li>
+      <li><button mat-raised-button color="primary"  routerLink="/">Home</button></li>
+      <li><button mat-raised-button color="primary"  routerLink="/color">Color</button></li>
+      <li><button mat-raised-button color="primary"   routerLink="/movies/add">Add Movie</button></li>
+      <li><button mat-raised-button  color="primary" routerLink="/movies">MaterialUi Movie</button></li>
     </ul>
   </nav>
 </mat-toolbar>

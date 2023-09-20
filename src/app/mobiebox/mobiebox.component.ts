@@ -27,12 +27,14 @@ progress=0
 initial="hidden"
 dis=""
 show=false
+
 constructor(private route:Router,private movieslist:MovieService){
 
 }
 
 editItem(){
   this.route.navigate([`/movies/editMovie/${this.mv.id}`])
+  console.log(this.mv)
 }
 
 //   getIndex(){

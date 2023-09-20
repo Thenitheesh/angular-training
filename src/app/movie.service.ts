@@ -101,13 +101,14 @@ export class MovieService {
   getmovie(){
     return this.moviesList
   }
+  
   getmoviefromapi(){
     return this.http.get<Movie[]>(
       'https://64f6f4189d7754084952d867.mockapi.io/movies'
     );
   }
   getmoviefromapibyid(id:string){
-    return this.http.get<Movie[]>(
+    return this.http.get<Movie>(
       `https://64f6f4189d7754084952d867.mockapi.io/movies/${id}`
     );
   }

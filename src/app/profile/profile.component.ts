@@ -3,7 +3,7 @@ export type Movie= {
   id:string;
   name:string;
   poster:string;
-  rating:number | '';
+  rating:number ;
   summary:string;
   trailer:string;
 }
