@@ -29,7 +29,7 @@
         <button
           mat-icon-button
           (click)="increment()"
-          matBadge="{{ likes }}"
+          matBadge="{{ mv.likes }}"
           matBadgePosition="after"
           matBadgeColor="primary"
         >
@@ -38,9 +38,9 @@
         <button
           mat-icon-button
           (click)="decrement()"
-          matBadge="{{ dislikes }}"
+          matBadge="{{ mv.dislikes }}"
           matBadgePosition="after"
-          matBadgeColor="primary"
+          matBadgeColor="warn"
         >
           👎
         </button>

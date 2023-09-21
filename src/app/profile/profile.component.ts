@@ -6,6 +6,8 @@ export type Movie= {
   rating:number ;
   summary:string;
   trailer:string;
+  likes:Number;
+  dislikes:Number
 }
 @Component({
   selector: 'app-profile',
@@ -15,7 +17,7 @@ export type Movie= {
 export class ProfileComponent {
 
   
-  @Input() movie:Movie={poster:"",name:"",summary:"",rating:0,id:"",trailer:""}
+  @Input() movie:Movie={poster:"",name:"",summary:"",rating:0,id:"",trailer:"",likes:0,dislikes:0}
   @Input() index:number=0
   @Output() deleteMovie= new EventEmitter<number>();
 

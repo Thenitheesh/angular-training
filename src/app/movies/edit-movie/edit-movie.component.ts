@@ -32,7 +32,7 @@ export class EditMovieComponent {
     private router: Router,
     private routedata: ActivatedRoute
   ) {
-    this.moviesList = this.movieService.getmovie();
+    // this.moviesList = this.movieService.getmovie();
     const { id } = this.routedata.snapshot.params;
     this.itemid = id;
     // this.perMovie=this.moviesList

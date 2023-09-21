@@ -26,7 +26,7 @@ export class AddmovieComponent {
     private router: Router,
     private routedata: ActivatedRoute
   ) {
-    this.moviesList = this.movieService.getmovie();
+    // this.moviesList = this.movieService.getmovie();
   }
   addMovie() {
     console.log(this.moviesForm.value);

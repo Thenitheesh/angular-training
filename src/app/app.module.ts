@@ -1,30 +1,22 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
-import { CounterComponent } from './counter/counter.component';
-import { FormsModule } from '@angular/forms';
 import { BoxComponent } from './box/box.component';
 import { ColorBoxComponent } from './color-box/color-box.component';
-import { AddmovieComponent } from './movies/addmovie/addmovie.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { CounterComponent } from './counter/counter.component';
+import { ProfileComponent } from './profile/profile.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MatCardModule } from '@angular/material/card';
-import { MaterialMovieuiComponent } from './movies/material-movieui/material-movieui.component';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MobieboxComponent } from './movies/mobiebox/mobiebox.component';
-import { MovietrailerComponent } from './movies/movietrailer/movietrailer.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
-import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MoviesModule } from './movies/movies.module';
 
 @NgModule({
   declarations: [

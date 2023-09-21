@@ -16,13 +16,16 @@ export class MobieboxComponent {
     rating: 0,
     summary: '',
     trailer: '',
+    likes:0,
+    dislikes:0
   };
   @Input() index = 0;
   // @Output() deleteMovie= new EventEmitter<string>();
   // @Output() editMovie= new EventEmitter<number>();
   @Output() removeMovie = new EventEmitter();
-  like = 0;
-  dislike = 0;
+  movieslikes: Movie[]=[]
+  likes = 0;
+  dislikes = 0;
   progress = 0;
   initial = 'hidden';
   dis = '';
@@ -55,18 +58,21 @@ export class MobieboxComponent {
     this.route.navigate([`/movies/${this.mv.id}`]);
   }
   increment() {
-    this.like++;
-
-    this.progress = (this.like / (this.dislike + this.like)) * 100;
+    this.likes++;
+    this.mv={...this.mv,likes:this.likes}
+    this.movieslist.updatemoviefromapi(this.mv.id,this.mv).subscribe()
+    // this.progress = (this.like / (this.dislike + this.like)) * 100;
   }
   decrement() {
-    this.dislike++;
-    this.progress = (this.like / (this.dislike + this.like)) * 100;
+    this.dislikes++;
+    this.mv={...this.mv,dislikes:this.dislikes}
+    this.movieslist.updatemoviefromapi(this.mv.id,this.mv).subscribe()
+    // this.progress = (this.like / (this.dislike + this.like)) * 100;
   }
-  get likes() {
-    return this.like;
-  }
-  get dislikes() {
-    return this.dislike;
-  }
+  // get like() {
+  //   return this.like;
+  // }
+  // get dislikes() {
+  //   return this.dislike;
+  // }
 }
