@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '../profile/profile.component';
-import { MovieService } from '../movie.service';
+import { Movie } from '../../profile/profile.component';
+import { MovieService } from '../../movie.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
