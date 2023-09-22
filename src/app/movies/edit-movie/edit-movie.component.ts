@@ -3,7 +3,8 @@ import { Movie } from '../../profile/profile.component';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MovieService } from '../../movie.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { LANGUAGES, GENRES } from '../addmovie/global';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 @Component({
   selector: 'app-edit-movie',
   templateUrl: './edit-movie.component.html',
@@ -14,18 +15,42 @@ export class EditMovieComponent {
   moviesList: Array<Movie> = [];
   perMovie: any;
   itemid: string = '';
-
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  genres=GENRES
+  languages=LANGUAGES
   // id=this.perMovie.name
 
   moviesForm = this.fb.group({
-    id: '',
-    name: ['', [Validators.required]],
+    like: 0,
+    dislike: 0,
+    name: ['', [Validators.required, Validators.minLength(5)]],
+    featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
-    poster: '',
-    summary: '',
-    trailer: '',
+    releaseYear: ['', [Validators.required]],
+    censorRating: ['', [Validators.required]],
+    genres: [[], [Validators.required]],
+    languages: [[], [Validators.required]],
+    cast: this.fb.array([]),
+    poster: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^http.*'),
+      ],
+    ],
+    summary: ['', [Validators.required, Validators.minLength(20)]],
+    trailer: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^http.*'),
+      ],
+    ],
   });
   index = 0;
+
   constructor(
     private movieService: MovieService,
     private fb: FormBuilder,

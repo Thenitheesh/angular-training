@@ -1,8 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../profile/profile.component';
 import { MovieService } from '../../movie.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { LANGUAGES, GENRES } from './global';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-addmovie',
@@ -12,13 +15,37 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddmovieComponent {
   @Input() movies: Movie[] = [];
   moviesList: Array<Movie> = [];
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  genres=GENRES
+  languages=LANGUAGES
   moviesForm = this.fb.group({
-    id: '',
-    name: ['', [Validators.required]],
+    like: 0,
+    dislike: 0,
+    name: ['', [Validators.required, Validators.minLength(5)]],
+    featured: [false],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
-    poster: ['', [Validators.required]],
-    summary: ['', [Validators.required, Validators.min(20)]],
-    trailer: ['', [Validators.required, Validators.pattern('^http.*')]],
+    releaseYear: ['', [Validators.required]],
+    censorRating: ['', [Validators.required]],
+    genres: [[], [Validators.required]],
+    languages: [[], [Validators.required]],
+    cast: this.fb.array([]),
+    poster: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^http.*'),
+      ],
+    ],
+    summary: ['', [Validators.required, Validators.minLength(20)]],
+    trailer: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^http.*'),
+      ],
+    ],
   });
   constructor(
     private movieService: MovieService,
@@ -27,6 +54,21 @@ export class AddmovieComponent {
     private routedata: ActivatedRoute
   ) {
     // this.moviesList = this.movieService.getmovie();
+  }
+  get cast() {
+    return this.moviesForm.get('cast') as FormArray;
+  }
+  addCastName(event: MatChipInputEvent) {
+    const name = (event.value || '').trim();
+    if (name) {
+      this.cast.push(this.fb.control(name));
+    }
+
+    event.chipInput!.clear();
+  }
+
+  removeCastName(index: number) {
+    this.cast.removeAt(index);
   }
   addMovie() {
     console.log(this.moviesForm.value);
