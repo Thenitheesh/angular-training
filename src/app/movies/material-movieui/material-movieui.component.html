@@ -1,3 +1,11 @@
+<form class="example-form" [formGroup]="moviesearch" >
+    <mat-form-field class="example-full-width">
+    
+        <mat-icon matSuffix>search</mat-icon>
+      <input type="text" formC matInput formControlName="searchtext" placeholder="Ex. RRR">
+    </mat-form-field>
+  </form>
+
 <section>
     <app-mobiebox *ngFor="let movie of movieList;let i=index" [index]="i" [mv]="movie" (removeMovie)="onloadmovie()"  ></app-mobiebox>
 </section>

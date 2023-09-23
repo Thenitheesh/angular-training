@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MovieService } from '../../movie.service';
 import { Movie } from '../../profile/profile.component';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-material-movieui',
@@ -10,8 +11,12 @@ import { Movie } from '../../profile/profile.component';
 export class MaterialMovieuiComponent {
   movieList: Movie[] = [];
   id: string = '';
-
-  constructor(private moviesList: MovieService) {
+  moviesearch=this.fb.group(
+  {
+    searchtext:""
+  }
+)
+  constructor(private moviesList: MovieService, private fb:FormBuilder) {
     // this.movieList=this.moviesList.getmovie()
   }
   ngOnInit() {
